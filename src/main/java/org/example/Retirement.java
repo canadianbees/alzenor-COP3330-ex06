@@ -12,6 +12,7 @@ public class Retirement
     private String age;
     private String retireAge;
 
+    //asks user for their age and their ideal retirement age
     public Retirement()
     {
         Scanner scan = new Scanner(System.in);
@@ -25,17 +26,20 @@ public class Retirement
 
     public void retireCalc()
     {
+        //converts string into integer
         int currAge = Integer.parseInt(this.age);
         int retAge = Integer.parseInt(this.retireAge);
 
         int diffAge = retAge - currAge;
 
+        //if the difference age is negative they can retire now
         if(diffAge <= 0)
         {
             System.out.print("You can retire right now!");
 
         }
 
+        //if its not, tell user how many years they have left and what year they can retire in
         else
         {
             System.out.println("You have "+diffAge+" years left until you can retire.");
